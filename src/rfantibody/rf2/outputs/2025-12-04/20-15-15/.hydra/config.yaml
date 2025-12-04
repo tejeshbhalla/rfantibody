@@ -1,21 +1,17 @@
 input:
   pdb: null
-  pdb_dir: null
+  pdb_dir: /root/rfantibody/scripts/examples/rf2/example_inputs
   quiver: null
-
 output:
-  pdb_dir: null
+  pdb_dir: /root/rfantibody/scripts/examples/rf2/example_outputs
   quiver: null
-  output_intermediates: False
-
+  output_intermediates: false
 inference:
   num_recycles: 10
   hotspot_show_proportion: 0.1
-  cautious: True
-
+  cautious: true
 model:
   model_weights: /root/rfantibody/weights/RF2_ab.pt
-
 model_param:
   n_extra_block: 4
   n_main_block: 36
@@ -51,4 +47,3 @@ model_param:
     num_edge_features: 64
     div: 4
     n_heads: 4
-

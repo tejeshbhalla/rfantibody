@@ -1,0 +1,5 @@
+[2025-12-04 20:12:59,076][rfantibody.rfdiffusion.inference.model_runners][INFO] - Reading checkpoint from /root/rfantibody/weights/RFdiffusion_Ab.pt
+[2025-12-04 20:15:04,594][rfantibody.rfdiffusion.inference.model_runners][INFO] - Loading checkpoint.
+[2025-12-04 20:15:04,759][rfantibody.rfdiffusion.diffusion][INFO] - Using cached IGSO3.
+[2025-12-04 20:15:04,775][__main__][INFO] - Making design /root/rfantibody/scripts/examples/example_outputs/ab_des_0
+[2025-12-04 20:15:04,775][__main__][INFO] - (cautious mode) Skipping this design because /root/rfantibody/scripts/examples/example_outputs/ab_des_0.pdb already exists.

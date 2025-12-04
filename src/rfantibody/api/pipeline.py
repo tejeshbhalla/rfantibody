@@ -68,7 +68,7 @@ def run_rfdiffusion(
     loops_str = "[" + ",".join(design_loops) + "]"
     
     cmd = [
-        "poetry", "run", "python",
+        "python",
         os.path.join(RFANTIBODY_ROOT, "scripts", "rfdiffusion_inference.py"),
         "--config-name", "antibody",
         f"antibody.target_pdb={target_pdb}",
@@ -89,7 +89,8 @@ def run_rfdiffusion(
         cmd,
         cwd=RFANTIBODY_ROOT,
         capture_output=True,
-        text=True
+        text=True,
+        env={**os.environ, "PYTHONPATH": f"{os.path.join(RFANTIBODY_ROOT, 'src')}:{os.path.join(RFANTIBODY_ROOT, 'include', 'SE3Transformer')}"}
     )
     
     if result.returncode != 0:
@@ -124,7 +125,7 @@ def run_proteinmpnn(
         shutil.copy(pdb, mpnn_input_dir)
     
     cmd = [
-        "poetry", "run", "python",
+        "python",
         os.path.join(RFANTIBODY_ROOT, "scripts", "proteinmpnn_interface_design.py"),
         "-pdbdir", mpnn_input_dir,
         "-outpdbdir", mpnn_output_dir,
@@ -137,7 +138,8 @@ def run_proteinmpnn(
         cmd,
         cwd=RFANTIBODY_ROOT,
         capture_output=True,
-        text=True
+        text=True,
+        env={**os.environ, "PYTHONPATH": f"{os.path.join(RFANTIBODY_ROOT, 'src')}:{os.path.join(RFANTIBODY_ROOT, 'include', 'SE3Transformer')}"}
     )
     
     if result.returncode != 0:
@@ -175,7 +177,7 @@ def run_rf2(
     rf2_config_dir = os.path.join(RFANTIBODY_ROOT, "src", "rfantibody", "rf2")
     
     cmd = [
-        "poetry", "run", "python",
+        "python",
         os.path.join(RFANTIBODY_ROOT, "scripts", "rf2_predict.py"),
         f"input.pdb_dir={rf2_input_dir}",
         f"output.pdb_dir={rf2_output_dir}"
@@ -187,7 +189,8 @@ def run_rf2(
         cmd,
         cwd=rf2_config_dir,
         capture_output=True,
-        text=True
+        text=True,
+        env={**os.environ, "PYTHONPATH": f"{os.path.join(RFANTIBODY_ROOT, 'src')}:{os.path.join(RFANTIBODY_ROOT, 'include', 'SE3Transformer')}"}
     )
     
     if result.returncode != 0:
