@@ -7,8 +7,11 @@ import rfantibody.rf2.modules.util as util
 import rfantibody.rf2.modules.pose_util as pu
 from rfantibody.rf2.modules.model_runner import AbPredictor
 from rfantibody.rf2.modules.preprocess import pose_to_inference_RFinput, Preprocess
+import os
 
-@hydra.main(version_base=None, config_path='/home/src/rfantibody/rf2/config', config_name='base')
+_RF2_CONFIG_PATH = os.path.join(os.path.dirname(__file__), '../src/rfantibody/rf2/config')
+
+@hydra.main(version_base=None, config_path=_RF2_CONFIG_PATH, config_name='base')
 def main(conf: HydraConfig) -> None:
     """
     Main function

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "rfantibody"
 version = "1.0.0"
-description = ""
+description = "RFantibody - Antibody Design Pipeline"
 authors = [
   "Nate Bennett <nrbennett2@gmail.com>",
   "Joe Watchwell <joe.watchwell@gmail.com>"
@@ -18,24 +18,29 @@ name = "pypi"
 priority = "primary"
 
 [[tool.poetry.source]]
-name = "pytorch"
-url = "https://download.pytorch.org/whl/cu118"
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
 priority = "explicit"
 
 [tool.poetry.dependencies]
-python = "3.10.*"
-torch = { version="2.3.*", source="pytorch" }
-torchaudio = "*"
-torchvision = "*"
+python = ">=3.10,<3.13"
+torch = {version = "2.2.1+cu121", source = "pytorch-cu121"}
+torchaudio = {version = "2.2.1+cu121", source = "pytorch-cu121"}
+torchvision = {version = "0.17.1+cu121", source = "pytorch-cu121"}
 torch-utils = "*"
-numpy = "1.*"
-cuda-python = "11.8"
+numpy = ">=1.24,<2.0"
 hydra-core = "*"
 icecream = "*"
 opt-einsum = "*"
-dgl = { file = "./include/dgl/dgl-2.4.0+cu118-cp310-cp310-manylinux1_x86_64.whl" }
 e3nn = "*"
 pyrsistent = "*"
+torchdata = "0.7.1"
+pydantic = "*"
+fastapi = "*"
+uvicorn = "*"
+
+# NOTE: DGL must be installed manually after poetry install:
+# pip install dgl -f https://data.dgl.ai/wheels/torch-2.2/cu121/repo.html
 
 [tool.poetry.group.test]
 optional = true

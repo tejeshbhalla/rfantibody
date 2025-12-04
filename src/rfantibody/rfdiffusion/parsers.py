@@ -6,7 +6,7 @@ import numpy as np
 import string
 import os,re
 import random
-import util
+from rfantibody.rfdiffusion import util
 import gzip
 
 import pandas as pd
@@ -98,7 +98,7 @@ def parse_pdb(filename, xyz27=False,seq=False):
     return parse_pdb_lines(lines, xyz27, seq)
 
 #'''
-def parse_pdb_lines(lines, xyz27, seq, get_aa=util.aa2num.get):
+def parse_pdb_lines(lines, xyz27, seq, get_aa=aa2num.get):
 
     # indices of residues observed in the structure
     idx_s = [int(l[22:26]) for l in lines if l[:4]=="ATOM" and l[12:16].strip()=="CA"]

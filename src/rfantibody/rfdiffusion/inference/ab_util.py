@@ -12,7 +12,8 @@ from rfantibody.rfdiffusion.chemical import INIT_CRDS
 from rfantibody.rfdiffusion.util import \
     torsion_indices as TOR_INDICES, \
     torsion_can_flip as TOR_CAN_FLIP, \
-    reference_angles as REF_ANGLES 
+    reference_angles as REF_ANGLES
+from rfantibody.rfdiffusion import util
 
 
 ab_tasks = [

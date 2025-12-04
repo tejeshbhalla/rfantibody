@@ -1,0 +1,3 @@
+[2025-12-04 18:42:32,137][rfantibody.rfdiffusion.inference.model_runners][INFO] - Reading checkpoint from /root/RFantibody/weights/RFdiffusion_Ab.pt
+[2025-12-04 18:43:27,670][rfantibody.rfdiffusion.inference.model_runners][INFO] - Loading checkpoint.
+[2025-12-04 18:43:27,827][rfantibody.rfdiffusion.diffusion][INFO] - Calculating IGSO3.

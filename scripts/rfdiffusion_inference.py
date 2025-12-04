@@ -90,7 +90,7 @@ def main(conf: HydraConfig) -> None:
                 # Find the highest design number
                 indices = [-1]
                 for tag in tags:
-                    m = re.match('.*_(\d+)$', tag)
+                    m = re.match(r'.*_(\d+)$', tag)
                     if not m:
                         continue
                     m = m.groups()[0]
@@ -102,7 +102,7 @@ def main(conf: HydraConfig) -> None:
         indices = [-1]
         for e in existing:
             print(e)
-            m = re.match('.*_(\d+)\.pdb$', e)
+            m = re.match(r'.*_(\d+)\.pdb$', e)
             print(m)
             if not m:
                 continue
